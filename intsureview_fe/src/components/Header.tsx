@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../contexts/UserContext";
 
 const Header: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const { user, setUser } = useContext(UserContext);
 
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
@@ -19,7 +21,7 @@ const Header: React.FC = () => {
           aria-expanded={showDropdown}
           aria-haspopup="true"
         >
-          DC
+          {user.firstName.charAt(0).toUpperCase()}{user.lastName.charAt(0).toUpperCase()}
         </button>
         {showDropdown && (
           <div
