@@ -1,0 +1,10 @@
+a {
+  color: #261208;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+a:hover {
+  color: #7c706a;
+  transition-duration: 500ms;
+}
